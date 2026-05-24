@@ -1,0 +1,22 @@
+name: Ready CI CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]  # Triggers when you push to main branch
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Checkout Code from GitHub
+      uses: actions/checkout@v3
+
+    - name: 2. Build Docker Image
+      run: |
+        docker build -t chetan-devops-app:latest .
+        echo "Docker Image Built Successfully!"
+
+    - name: 3. Verify Docker Image Exists
+      run: |
+        docker images | grep chetan-devops-app
