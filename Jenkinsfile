@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ChetanSinghal/YOUR_REPO_NAME.git'
+                git branch: 'master', url: 'https://github.com/PraveenKumar1-hub/PAHLI_REPO.git'
             }
         }
         stage('Build') {
